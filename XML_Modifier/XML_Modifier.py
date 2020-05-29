@@ -5,6 +5,7 @@ projectPath = ''
 xmlFilePath = ''
 
 
+
 def getListOfFilesPath(dirName):
     # create a list of file and sub directories 
     # names in the given directory 
@@ -70,13 +71,15 @@ for LocaleResource in root.findall('LocaleResource'):
         if searchResourceInFile(file,tagName):
             flag = True
             break
+        else:
+            flag = False
 
 
     # flag remains false when specified tag 
     if flag is False:
         root.remove(LocaleResource)
         removedTags.append(tagName)
-        print(str(counter) + ' : ' + tagName + 'Removed')
+        print(str(counter) + ' : ' + tagName + ' Removed')
     else:
         foundTags.append(tagName + ' exists in  : ' + file)
         print(str(counter) + ' : ' + tagName + ' exists in : '+ file)
