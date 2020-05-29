@@ -12,5 +12,5 @@ Set your project path and XML file path in these variables like this :
 
 ```python
 
-projectPath = ''
-xmlFilePath = ''
+projectPath = 'C:\\Users\\{Username}\\Desktop\\{Project name}'
+xmlFilePath = 'C:\\Users\\{Username}\\Desktop\\{Project name}\\{XML file}'
