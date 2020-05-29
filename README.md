@@ -4,3 +4,13 @@ Search in project files ( .NET Core  ==> .cs &amp; .cshtml &amp; .config) and re
 - Generate new modified xml file in directory of XML_Modifier.py
 - Make new text file named RemovedTags that contains list of _removed tags_ of xml file in directory of XML_Modifier.py
 - Make new text file named FoundTagsFile that contains list of _found tags_ of xml file in directory of XML_Modifier.py
+
+
+## Usage
+Set your project path and XML file path in these variables like this :
+
+
+```python
+
+projectPath = ''
+xmlFilePath = ''
