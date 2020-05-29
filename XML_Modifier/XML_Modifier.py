@@ -1,8 +1,8 @@
 import os
 import xml.etree.ElementTree as ET
 
-projectPath = 'C:\\Users\\Amirhossein\\Desktop\\renovationpublicfleet'
-xmlFilePath = 'C:\\Users\\Amirhossein\\Desktop\\renovationpublicfleet\\Presentation\\RenovationPublicFleet.Web\\App_Data\\Localization\\defaultResources.rpfres.xml'
+projectPath = ''
+xmlFilePath = ''
 
 
 def getListOfFilesPath(dirName):
