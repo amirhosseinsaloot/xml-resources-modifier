@@ -1,8 +1,8 @@
 import os
 import xml.etree.ElementTree as ET
 
-projectPath = ''
-xmlFilePath = ''
+projectPath = 'C:\\Users\\Amirhossein\\Desktop\\renovationpublicfleet'
+xmlFilePath = 'C:\\Users\\Amirhossein\\Desktop\\renovationpublicfleet\\Presentation\\RenovationPublicFleet.Web\\App_Data\\Localization\\defaultResources.rpfres.xml'
 
 
 def getListOfFilesPath(dirName):
@@ -61,10 +61,11 @@ flag = False
 # list of removed tags in xml file
 removedTags = []
 foundTags = []
+counter = 0
 
 for LocaleResource in root.findall('LocaleResource'):
     tagName = LocaleResource.get('Name')
-    
+    counter = counter + 1
     for file in fileLists:
         if searchResourceInFile(file,tagName):
             flag = True
@@ -75,8 +76,10 @@ for LocaleResource in root.findall('LocaleResource'):
     if flag is False:
         root.remove(LocaleResource)
         removedTags.append(tagName)
+        print(str(counter) + ' : ' + tagName + 'Removed')
     else:
-        foundTags.append(tagName + ' found in  : ' + file)
+        foundTags.append(tagName + ' exists in  : ' + file)
+        print(str(counter) + ' : ' + tagName + ' exists in : '+ file)
 
 
 # generate new modified xml file in XML_Modifier.py directory
