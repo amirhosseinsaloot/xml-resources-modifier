@@ -5,7 +5,6 @@ projectPath = ''
 xmlFilePath = ''
 
 
-
 def getListOfFilesPath(dirName):
     # create a list of file and sub directories 
     # names in the given directory 
@@ -75,7 +74,7 @@ for LocaleResource in root.findall('LocaleResource'):
             flag = False
 
 
-    # flag remains false when specified tag 
+    # flag remains false when specified tag not found in files
     if flag is False:
         root.remove(LocaleResource)
         removedTags.append(tagName)
@@ -85,17 +84,22 @@ for LocaleResource in root.findall('LocaleResource'):
         print(str(counter) + ' : ' + tagName + ' exists in : '+ file)
 
 
+
+
 # generate new modified xml file in XML_Modifier.py directory
 tree.write('Output.xml',encoding='utf-8')
 
-
 # make new text file that contains list of removed tags of xml file
-RemovedTagsFile = open("RemovedTags.txt", "a")
+RemovedTagsFile = open('RemovedTags.txt', 'a')
+RemovedTagsFile.write(str(len(removedTags)) + ' tags removed : \n')
 RemovedTagsFile.write(listToString(removedTags))
 RemovedTagsFile.close()
 
 
 # make new text file that contains list of found tags of xml file
-FoundTagsFile = open("FoundTags.txt", "a")
+FoundTagsFile = open('FoundTags.txt', 'a')
+FoundTagsFile.write(str(len(foundTags)) + ' tags exists in project : \n')
 FoundTagsFile.write(listToString(foundTags))
 FoundTagsFile.close()
+
+input("Press Enter to exit ...")
