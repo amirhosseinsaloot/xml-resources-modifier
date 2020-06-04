@@ -76,8 +76,8 @@ for LocaleResource in root.findall('LocaleResource'):
         removedTags.append(tagName)
         print(str(counter) + ' : ' + tagName + ' Removed')
     else:
-        foundTags.append(tagName + ' exists in  : ' + file)
-        print(str(counter) + ' : ' + tagName + ' exists in : ' + file)
+        foundTags.append(tagName + ' found')
+        print(str(counter) + ' : ' + tagName + ' found')
 
 allTags = [
     e.attrib['Name'] for e in tree.iter()
